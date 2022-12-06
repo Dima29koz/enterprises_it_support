@@ -1,0 +1,51 @@
+{% extends 'pr7/index.html' %}
+
+{% block title %}
+Index - 1
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block main %}
+<div class="form-signin text-center m-auto">
+    <form method="post" class="form-contact">
+        {{ form.hidden_tag() }}
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="alert flash-{{cat}}">{{msg}}</div>
+        {% endfor %}
+        {% for field in form if field.name not in ['csrf_token', 'submit'] %}
+        <div class="form-floating">
+            {% if field.errors %}
+            {{ field(class="form-control") }}
+            <ul class="errors">
+                {% for error in field.errors %}
+                <li class="error">
+                                <span class="err">
+                                    {{ error }}
+                                </span>
+                </li>
+                {% endfor %}
+            </ul>
+            {{ field.label(class="err", value=field.errors[0]) }}
+            {% else %}
+            {{ field(class="form-control") }}
+            {{ field.label() }}
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <div>{{ form.submit(class="w-100 btn btn-lg btn-primary") }}</div>
+        <button class="w-100 btn btn-lg btn-dark" onclick="btnRedirect()">Отправить (Метод GET)</button>
+    </form>
+</div>
+{% endblock %}
+{% block tail_js %}
+<script>
+    function btnRedirect() {
+        let f1 = document.getElementById('field1').innerText;
+        let f2 = document.getElementById('field2').innerText;
+        window.location.href = '/index2?field1=' + f1 + '&field2=' + f2;
+    }
+</script>
+{% endblock %}

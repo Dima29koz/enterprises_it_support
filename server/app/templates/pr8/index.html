@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}пр - 8{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/pr8/index.js') }}"></script>
+{% endblock %}
+
+{% block main %}
+<div class="form-signin text-center m-auto">
+    <h3>Введите название города в россии</h3>
+    <div class="form-floating">
+        <div class="form-floating">
+            <input class="form-control" id="field1" name="field1" type="text">
+            <label for="field1">Укажите город</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" style="min-height: 100px" id="field2" name="field2" readonly></textarea>
+            <label for="field2">Текущая температура</label>
+        </div>
+
+        <button id="search-btn" class="w-100 btn btn-lg btn-dark">Найти</button>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+key_dadata = 'e49d2d362c152e287022661527d547de299b8198'
+key_weather = 'ed1aa54788c5c1e08b5bb343f0576f94'
