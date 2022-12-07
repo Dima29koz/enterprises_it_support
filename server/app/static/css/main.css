@@ -6,3 +6,22 @@
 .suggestions {
     max-height: 12em;
 }
+
+.err {
+    color: red
+}
+
+.errors, .flash-error {
+    list-style: none;
+    font-size: .8em;
+    text-align: left;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    background: #fae7ea;
+    padding: 9px 15px;
+    border-radius: 0 0 3px 3px;
+    border: 1px solid #e1c5c5;
+    border-top: 0;
+    color: #8d7575;
+    height: fit-content;
+}

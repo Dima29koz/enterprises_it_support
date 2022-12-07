@@ -39,6 +39,8 @@ def create_app(config) -> Flask:
     app.register_blueprint(pr10_blueprint)
     from .pr11 import pr11 as pr11_blueprint
     app.register_blueprint(pr11_blueprint)
+    from .pr13 import pr13 as pr13_blueprint
+    app.register_blueprint(pr13_blueprint)
 
     sio.init_app(app, logger=config.LOGGER, manage_session=config.MANAGE_SESSION)
 

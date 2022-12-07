@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}пр - 13{% endblock %}
+
+
+{% block menu %}
+<header class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Header">
+    <div class="container">
+        <a href="{{ url_for('pr13.index') }}" class="navbar-brand">Пр-13</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-13" aria-controls="header">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end bg-dark cropped" data-bs-scroll="true" tabindex="-1" id="header-13" aria-labelledby="headerLable">
+            <ul class="navbar-nav ms-sm-auto mb-2 mx-3 mx-sm-0 mb-sm-0">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active text-decoration-none" href="{{ url_for('pr13.logout') }}">Выйти</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active text-decoration-none" href="{{ url_for('pr13.login') }}">Авторизация</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</header>
+{% endblock %}
